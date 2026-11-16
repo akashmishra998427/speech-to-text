@@ -68,7 +68,32 @@ builder.Services.AddScoped<Iuser, User>();
 builder.Services.AddScoped<JwtHelper>();
 builder.Services.AddScoped<CloudinaryHelper>();
 
+// client URL
+
+builder.Services.AddHttpClient("SpeechToText", client =>
+{
+    client.BaseAddress = new Uri(
+        builder.Configuration["SpeechToText:BaseUrl"]!
+    );
+
+    client.Timeout = TimeSpan.FromMinutes(5);
+});
+
+//CORS (Cross-Origin Resource Sharing)
+
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.AllowAnyHeader()
+         .AllowAnyOrigin()
+         .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowFrontend");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

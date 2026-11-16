@@ -4,6 +4,8 @@ using speect_to_text_Api.DTO;
 using speect_to_text_Api.DTO.ResponseDTO;
 using speect_to_text_Api.Helpers;
 using System.Data;
+using System.Text.Json;
+using System.Net.Http.Headers;
 
 namespace speect_to_text_Api.Services
 {
@@ -12,12 +14,12 @@ namespace speect_to_text_Api.Services
         private readonly IDbConnection _db;
         private readonly ILogger<User> _logger;
         private readonly JwtHelper _jwt;
-
+   
         public User(IDbConnection db, ILogger<User> logger, JwtHelper jwt)
         {
             _db = db;
             _logger = logger;
-            _jwt = jwt;
+            _jwt = jwt; 
         }
 
         public async Task<RegResponse> RegisterUserAsync(UserReg user)
@@ -26,7 +28,7 @@ namespace speect_to_text_Api.Services
             {
                 var PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
                 string Query = @$"INSERT INTO Users(Name, Phone, email, Gender, Profession, Address, password_hash, created_at)
-                                VALUES('{user.Name}', '{user.Phone}', '{user.Email}', '{user.Gender}', '{user.Profession}', '{user.Address}', '{PasswordHash}', CURRENT_TIMESTAMP)
+                                VALUES('{user.Name}', '{user.Phone}', '{user.Email}', '{user.Gender}', '{user.Profession}', N'{user.Address}', '{PasswordHash}', CURRENT_TIMESTAMP)
                 ";
                 int res = await _db.ExecuteAsync(Query);
                 return new RegResponse
@@ -118,10 +120,10 @@ namespace speect_to_text_Api.Services
             }
         }
 
-
         public async Task<bool> ForgotPasswordAsync(string email)
         {
             throw new NotImplementedException();
         }
+         
     }
 }

@@ -51,3 +51,4 @@ D:\Akash\College Project\speect-to-text-Api\speect-to-text-Api\obj\Debug\net9.0\
 D:\Akash\College Project\speect-to-text-Api\speect-to-text-Api\obj\Debug\net9.0\speect-to-text-Api.pdb
 D:\Akash\College Project\speect-to-text-Api\speect-to-text-Api\obj\Debug\net9.0\speect-to-text-Api.genruntimeconfig.cache
 D:\Akash\College Project\speect-to-text-Api\speect-to-text-Api\obj\Debug\net9.0\ref\speect-to-text-Api.dll
+D:\Akash\College Project\speect-to-text-Api\speect-to-text-Api\obj\Debug\net9.0\speect-to-text-Api.sourcelink.json
