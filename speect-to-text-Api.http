@@ -1,0 +1,6 @@
+@speect_to_text_Api_HostAddress = http://localhost:5101
+
+GET {{speect_to_text_Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
