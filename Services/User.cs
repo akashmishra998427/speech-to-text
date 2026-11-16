@@ -4,8 +4,7 @@ using speect_to_text_Api.DTO;
 using speect_to_text_Api.DTO.ResponseDTO;
 using speect_to_text_Api.Helpers;
 using System.Data;
-using System.Text.Json;
-using System.Net.Http.Headers;
+
 
 namespace speect_to_text_Api.Services
 {

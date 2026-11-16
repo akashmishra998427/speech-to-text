@@ -63,6 +63,7 @@ builder.Services.AddAuthentication(options =>
 
 // services
 builder.Services.AddScoped<Iuser, User>();
+builder.Services.AddScoped<Ichat, ChatService>();
 
 // Helpers
 builder.Services.AddScoped<JwtHelper>();

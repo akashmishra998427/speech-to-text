@@ -48,5 +48,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "speect_to_text_Api.Controllers.ChatController",
+    "Method": "AddVoicePrompt",
+    "RelativePath": "api/Chat/chats/{chatId}/voice-prompts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chatId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -12,6 +12,5 @@ namespace speect_to_text_Api.Services
 
         Task<bool> ForgotPasswordAsync(string email);
 
-        Task<VoicePromptResponse> AddVoicePromptAsync(int chatId, IFormFile file);
     }
 }

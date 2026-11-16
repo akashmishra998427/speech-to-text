@@ -3,6 +3,7 @@ namespace speect_to_text_Api.Services
 {
     public interface Ichat
     {
-        Task<VoicePromptResponse> GetChatResponse(string authToken);
+
+        Task<VoicePromptResponse> AddVoicePromptAsync(int chatId, IFormFile file);
     }
 }
